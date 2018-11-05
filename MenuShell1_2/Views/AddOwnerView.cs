@@ -15,23 +15,23 @@ namespace MenuShell1_2.Views
             do
             {
                 Console.Clear();
-                Console.WriteLine("# Add new owner");
+                Console.WriteLine(" # Add new owner");
 
-                Console.Write("\nFirst name: ");
+                Console.Write("\n First name: ");
                 var firstName = Console.ReadLine();
-                Console.Write("Last name: ");
+                Console.Write(" Last name: ");
                 var lastName = Console.ReadLine();
 
-                Console.Write("\nSocial security number (12 digits): ");
+                Console.Write("\n Social security number (12 digits): ");
                 var socSecNr = long.Parse(Console.ReadLine());
 
-                Console.WriteLine("Is this correct (Y)es (N)o");
+                Console.WriteLine(" Is this correct (Y)es (N)o");
                 var confirm = Console.ReadKey(true);
 
                 if (confirm.Key == ConsoleKey.Y)
                 {
                     addOwner.OwnerAdd(new Owner(firstName, lastName, socSecNr));
-                    Console.WriteLine("\nOwner added successfully");
+                    Console.WriteLine("\n Owner added successfully");
                     Thread.Sleep(1000);
                     done = true;
                 }

@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Entities\Animal.cs" />
+    <Compile Include="Domain\Entities\Appointment.cs" />
+    <Compile Include="Domain\Entities\Journal.cs" />
     <Compile Include="Domain\Entities\MenuShellDbContext.cs" />
     <Compile Include="Domain\Entities\Owner.cs" />
     <Compile Include="Domain\Entities\User.cs" />
@@ -68,6 +70,10 @@
     <Compile Include="Migrations\201811050928573_initial.cs" />
     <Compile Include="Migrations\201811050928573_initial.Designer.cs">
       <DependentUpon>201811050928573_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811051414507_second.cs" />
+    <Compile Include="Migrations\201811051414507_second.Designer.cs">
+      <DependentUpon>201811051414507_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -90,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811050928573_initial.resx">
       <DependentUpon>201811050928573_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811051414507_second.resx">
+      <DependentUpon>201811051414507_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

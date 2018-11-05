@@ -8,21 +8,10 @@ namespace MenuShell1_2.Domain.Servises
     {
         public void OwnerAdd(Owner ownerForAdding)
         {
-            string connectionString = "Data Source=(local);Initial Catalog=MenuShell;Integrated Security=true";
-            string queryString = $"INSERT INTO [Owner] VALUES('{ownerForAdding.FirstName}', '{ownerForAdding.LastName}', " +
-                                 $"'{ownerForAdding.SocSecNr}')";
-
-            using (var connection = new SqlConnection(connectionString))
+            using (var context = new MenuShellDbContext())
             {
-                connection.Open();
-
-                var sqlCommand = new SqlCommand(queryString, connection);
-                
-                sqlCommand = new SqlCommand(queryString, connection);
-
-                sqlCommand.ExecuteReader();
-                
-                connection.Close();
+                context.Owners.Add(ownerForAdding);
+                context.SaveChanges();
             }
         }
     }
