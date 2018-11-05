@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +50,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Entities\Animal.cs" />
+    <Compile Include="Domain\Entities\MenuShellDbContext.cs" />
+    <Compile Include="Domain\Entities\Owner.cs" />
+    <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Domain\Services\AddOwner.cs" />
+    <Compile Include="Domain\Services\AddUser.cs" />
+    <Compile Include="Domain\Services\Authentication.cs" />
+    <Compile Include="Domain\Services\DeleteOwner.cs" />
+    <Compile Include="Domain\Services\DeleteUser.cs" />
+    <Compile Include="Domain\Services\ListOwner.cs" />
+    <Compile Include="Domain\Services\ListUser.cs" />
+    <Compile Include="Domain\Services\OwnerLoader.cs" />
+    <Compile Include="Domain\Services\SearchOwner.cs" />
+    <Compile Include="Domain\Services\SearchUser.cs" />
+    <Compile Include="Domain\Services\UserLoader.cs" />
+    <Compile Include="Migrations\201811050928573_initial.cs" />
+    <Compile Include="Migrations\201811050928573_initial.Designer.cs">
+      <DependentUpon>201811050928573_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AddOwnerView.cs" />
+    <Compile Include="Views\AddUserView.cs" />
+    <Compile Include="Views\AdminMainView.cs" />
+    <Compile Include="Views\ListOwnerView.cs" />
+    <Compile Include="Views\ListUserView.cs" />
+    <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\ManageUserView.cs" />
+    <Compile Include="Views\ReceptionistMainView.cs" />
+    <Compile Include="Views\SearchOwnerView.cs" />
+    <Compile Include="Views\SearchUserView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811050928573_initial.resx">
+      <DependentUpon>201811050928573_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
